@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Cartão de Visita</string>
+    <string name="label_business_cards">Cartões de Visita</string>
+    <string name="add_new_card">Adiciona novo Cartão</string>
+    <string name="label_new_card">Novo Cartão</string>
+    <string name="label_name">Nome</string>
+    <string name="label_phone_number">Telefone</string>
+    <string name="label_e_mail">E-mail</string>
+    <string name="label_company">Empresa</string>
+    <string name="label_confirm">Confirmar</string>
+    <string name="tag_color_description">Cor:</string>
+    <string name="tag_cancel">Cancelar</string>
+    <string name="tag_choose">Escolher</string>
+    <string name="label_show_success">Cartão cadastrado com sucesso!</string>
+    <string name="label_share">Compartilhar</string>
+</resources>
