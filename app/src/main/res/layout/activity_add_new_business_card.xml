@@ -123,6 +123,7 @@
             android:layout_marginStart="16dp"
             android:backgroundTint="@color/gray_700"
             android:textSize="0sp"
+            android:text=""
             app:layout_constraintBottom_toBottomOf="@+id/pick_color_button"
             app:layout_constraintStart_toEndOf="@+id/pick_color_button"
             app:layout_constraintTop_toTopOf="@+id/pick_color_button" />

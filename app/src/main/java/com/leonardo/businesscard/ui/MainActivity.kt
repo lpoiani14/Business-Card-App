@@ -3,10 +3,10 @@ package com.leonardo.businesscard.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
+import android.widget.Toast
 import androidx.activity.viewModels
 import com.leonardo.businesscard.App
-import com.leonardo.businesscard.data.BusinessCard
+import com.leonardo.businesscard.R
 import com.leonardo.businesscard.databinding.ActivityMainBinding
 import com.leonardo.businesscard.util.Image
 
@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
         adapter.listenerShare = { card ->
             Image.share(this@MainActivity, card)
         }
+        adapter.onLongClick = { id -> onLongClickItemRecyclerView(id = id) }
         //TODO Botão para apagar cards
         // binding.fabRemoveCard.setOnClickListener {
         //    deleteBusinessCard()
@@ -42,10 +43,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     // TODO Botão para apagar cards
-    // private fun deleteBusinessCard(){
-    //    mainViewModel.deleteAll()
-    //    getAllBusinessCard()
-    //}
+    private fun deleteBusinessCard(id: Int) {
+        mainViewModel.delete(id)
+        getAllBusinessCard()
+    }
+
+    private fun onLongClickItemRecyclerView(id: Int) {
+        deleteBusinessCard(id)
+        Toast.makeText(this, R.string.label_show_delete_success, Toast.LENGTH_SHORT).show()
+    }
 
     private fun getAllBusinessCard() {
         mainViewModel.getAll().observe(this) { businessCards ->

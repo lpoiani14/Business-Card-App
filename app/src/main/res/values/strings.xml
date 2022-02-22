@@ -12,5 +12,6 @@
     <string name="tag_choose">Choose</string>
     <string name="add_new_card">Add New Card</string>
     <string name="label_show_success">Successfully generated the card!</string>
+    <string name="label_show_delete_success">Successfully deleted the card!</string>
     <string name="label_share">Share</string>
 </resources>

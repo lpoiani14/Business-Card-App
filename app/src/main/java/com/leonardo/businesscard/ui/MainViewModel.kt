@@ -15,9 +15,17 @@ class MainViewModel(private val businessCardRepository: BusinessCardRepository) 
     fun getAll(): LiveData<List<BusinessCard>> {
         return businessCardRepository.getAll()
     }
-    fun delete(delId:Int) {
-        businessCardRepository.delete(delId)
+    fun delete(
+        id: Int
+    ){
+        Thread(Runnable {
+            Thread.sleep(1000)
+            businessCardRepository.delete(id)
+        }).start()
     }
+    /*fun delete(delId:Int) {
+        businessCardRepository.delete(delId)
+    }*/
     fun deleteAll() {
         businessCardRepository.deleteAll()
     }

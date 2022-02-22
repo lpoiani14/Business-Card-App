@@ -13,5 +13,6 @@
     <string name="tag_cancel">Cancelar</string>
     <string name="tag_choose">Escolher</string>
     <string name="label_show_success">Cartão cadastrado com sucesso!</string>
+    <string name="label_show_delete_success">Cartão deletado com sucesso!</string>
     <string name="label_share">Compartilhar</string>
 </resources>

@@ -8,11 +8,11 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.leonardo.businesscard.data.BusinessCard
 import com.leonardo.businesscard.databinding.ItemBusinessCardBinding
-
 class BusinessCardAdapter :
     ListAdapter<BusinessCard, BusinessCardAdapter.ViewHolder>(DiffCallback()) {
 
     var listenerShare: (View) -> Unit = {}
+    lateinit var onLongClick: ((Int)->Unit)
 
     inner class ViewHolder(
         private val binding: ItemBusinessCardBinding
@@ -22,13 +22,14 @@ class BusinessCardAdapter :
             binding.tvPhone.text = item.phone
             binding.tvEmail.text = item.email
             binding.tvCompany.text = item.company
-            binding.mcvContent.tag=item.id
+            //binding.mcvContent.tag=item.id
             binding.mcvContent.setBackgroundColor(item.customBackground)
             binding.mcvContent.setOnClickListener {
                 listenerShare(it)
             }
             binding.mcvContent.setOnLongClickListener {
-                binding.mcvContent.isChecked = !binding.mcvContent.isChecked
+                onLongClick(item.id)
+                //binding.mcvContent.isChecked = !binding.mcvContent.isChecked
                 true
             }
         }

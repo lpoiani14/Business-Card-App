@@ -9,5 +9,6 @@ O App foi baseado no desenvolvimento que foi feito nos vídeos do desafio do Pro
 - Adicionada a função de escolher cor ao invés de entrar um texto
 - Criado um botão de voltar na Toolbar
 - Adaptado teclado e texto de entrada para os diversos campos, por exemplo, no campo Telefone, a formatação do número vai mudando conforme o usuário digita
+- Habilitada função de deletar cartões ao dar um clique longo
 # TO DO
-- Habilitar função de deletar cartões
+

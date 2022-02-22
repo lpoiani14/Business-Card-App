@@ -10,6 +10,7 @@ import android.view.View
 import android.view.View.OnClickListener
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.core.content.ContextCompat
 import com.leonardo.businesscard.App
 import com.leonardo.businesscard.R
 import com.leonardo.businesscard.data.BusinessCard
@@ -57,7 +58,7 @@ class AddNewBusinessCard : AppCompatActivity() {
                         binding.previewSelectedColor.text = color.toString()
                     }
 
-                    fun onColor(color:Int, fromUser:Boolean){
+                    fun onColor(color: Int, fromUser: Boolean) {
                         binding.previewSelectedColor.setBackgroundColor(color)
                         binding.previewSelectedColor.text = color.toString()
                     }
@@ -70,7 +71,10 @@ class AddNewBusinessCard : AppCompatActivity() {
                 phone = binding.tilPhone.editText?.text.toString(),
                 email = binding.tilEmail.editText?.text.toString(),
                 company = binding.tilCompany.editText?.text.toString(),
-                customBackground = binding.previewSelectedColor.text.toString().toInt()
+                customBackground = if (binding.previewSelectedColor.text == "") {
+                    (ContextCompat.getColor(this, R.color.gray_700))
+                } else binding.previewSelectedColor.text.toString().toInt()
+
             )
             mainViewModel.insert(businessCard)
             Toast.makeText(this, R.string.label_show_success, Toast.LENGTH_LONG).show()
